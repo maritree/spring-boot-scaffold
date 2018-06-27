@@ -1,0 +1,59 @@
+package ${package.Controller};
+
+import ${package.Entity}.${entity};
+import ${package.ServiceImpl}.${table.serviceImplName};
+
+import com.maritree.springbootscaffold.common.response.Result;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.io.Serializable;
+import java.util.List;
+
+
+#set ($lowerentity = $entity.substring(0,1).toLowerCase() + $entity.substring(1,$entity.length()))
+/**
+ *
+ * ${table.comment} RestFul接口
+ *
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+@RestController
+@RequestMapping("/${lowerentity}")
+public class ${entity}Controller {
+    Logger logger = LoggerFactory.getLogger(${entity}Controller.class);
+
+    @Autowired
+    ${entity}Service ${lowerentity}Service;
+
+
+    @PostMapping("/insert")
+    public Object insert(@RequestParam ${entity} ${lowerentity}) {
+        ${lowerentity}Service.insert(${lowerentity});
+        return Result.genSuccessResult();
+    }
+
+    @GetMapping("/deleteById/{id}")
+    public Object delete(@PathVariable Serializable id) {
+        ${lowerentity}Service.deleteById(id);
+        return Result.genSuccessResult();
+
+    }
+    @PostMapping("/update")
+    public Object update(@RequestParam ${entity} ${lowerentity}) {
+        ${lowerentity}Service.updateById(${lowerentity});
+        return Result.genSuccessResult();
+    }
+
+    @GetMapping("/list")
+    public Object list() {
+        List<${entity}> ${lowerentity}List = ${lowerentity}Service.selectList(null);
+        return Result.genSuccessResult(${lowerentity}List);
+    }
+
+}
+
