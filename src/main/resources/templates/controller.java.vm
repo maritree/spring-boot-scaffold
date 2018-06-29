@@ -32,7 +32,7 @@ public class ${entity}Controller {
 
 
     @PostMapping("/insert")
-    public Object insert(@RequestParam ${entity} ${lowerentity}) {
+    public Object insert(@RequestBody ${entity} ${lowerentity}) {
         ${lowerentity}Service.insert(${lowerentity});
         return Result.genSuccessResult();
     }
@@ -44,7 +44,7 @@ public class ${entity}Controller {
 
     }
     @PostMapping("/update")
-    public Object update(@RequestParam ${entity} ${lowerentity}) {
+    public Object update(@RequestBody ${entity} ${lowerentity}) {
         ${lowerentity}Service.updateById(${lowerentity});
         return Result.genSuccessResult();
     }
