@@ -33,6 +33,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
@@ -102,6 +103,7 @@
             <artifactId>jjwt</artifactId>
             <version>0.9.0</version>
         </dependency>
+
 
 
     </dependencies>
