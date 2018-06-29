@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author maritree
- * @since 2018-06-27
+ * @since 2018-06-29
  */
 @Mapper
 public interface GroupUserMapper extends BaseMapper<GroupUser> {

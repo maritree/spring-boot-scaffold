@@ -19,7 +19,7 @@ import java.util.List;
  *
  *
  * @author maritree
- * @since 2018-06-27
+ * @since 2018-06-29
  */
 @RestController
 @RequestMapping("/user")
@@ -31,7 +31,7 @@ public class UserController {
 
 
     @PostMapping("/insert")
-    public Object insert(@RequestParam User user) {
+    public Object insert(@RequestBody User user) {
         userService.insert(user);
         return Result.genSuccessResult();
     }
@@ -43,7 +43,7 @@ public class UserController {
 
     }
     @PostMapping("/update")
-    public Object update(@RequestParam User user) {
+    public Object update(@RequestBody User user) {
         userService.updateById(user);
         return Result.genSuccessResult();
     }
@@ -53,7 +53,6 @@ public class UserController {
         List<User> userList = userService.selectList(null);
         return Result.genSuccessResult(userList);
     }
-
 
 }
 

@@ -11,7 +11,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author maritree
- * @since 2018-06-27
+ * @since 2018-06-29
  */
 @TableName("sys_data")
 public class Data implements Serializable {

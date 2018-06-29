@@ -19,7 +19,7 @@ import java.util.List;
  *
  *
  * @author maritree
- * @since 2018-06-27
+ * @since 2018-06-29
  */
 @RestController
 @RequestMapping("/groupUser")
@@ -31,7 +31,7 @@ public class GroupUserController {
 
 
     @PostMapping("/insert")
-    public Object insert(@RequestParam GroupUser groupUser) {
+    public Object insert(@RequestBody GroupUser groupUser) {
         groupUserService.insert(groupUser);
         return Result.genSuccessResult();
     }
@@ -43,7 +43,7 @@ public class GroupUserController {
 
     }
     @PostMapping("/update")
-    public Object update(@RequestParam GroupUser groupUser) {
+    public Object update(@RequestBody GroupUser groupUser) {
         groupUserService.updateById(groupUser);
         return Result.genSuccessResult();
     }

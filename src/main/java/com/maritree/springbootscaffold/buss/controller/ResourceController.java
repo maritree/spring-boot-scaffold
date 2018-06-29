@@ -19,7 +19,7 @@ import java.util.List;
  *
  *
  * @author maritree
- * @since 2018-06-27
+ * @since 2018-06-29
  */
 @RestController
 @RequestMapping("/resource")
@@ -31,7 +31,7 @@ public class ResourceController {
 
 
     @PostMapping("/insert")
-    public Object insert(@RequestParam Resource resource) {
+    public Object insert(@RequestBody Resource resource) {
         resourceService.insert(resource);
         return Result.genSuccessResult();
     }
@@ -43,7 +43,7 @@ public class ResourceController {
 
     }
     @PostMapping("/update")
-    public Object update(@RequestParam Resource resource) {
+    public Object update(@RequestBody Resource resource) {
         resourceService.updateById(resource);
         return Result.genSuccessResult();
     }
