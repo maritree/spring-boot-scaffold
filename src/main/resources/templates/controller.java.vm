@@ -28,32 +28,34 @@ public class ${entity}Controller {
     Logger logger = LoggerFactory.getLogger(${entity}Controller.class);
 
     @Autowired
-    ${entity}Service ${lowerentity}Service;
+        ${entity}ServiceImpl ${lowerentity}Service;
 
 
     @PostMapping("/insert")
     public Object insert(@RequestBody ${entity} ${lowerentity}) {
-        ${lowerentity}Service.insert(${lowerentity});
+            ${lowerentity}Service.save(${lowerentity});
         return Result.genSuccessResult();
     }
 
     @GetMapping("/deleteById/{id}")
     public Object delete(@PathVariable Serializable id) {
-        ${lowerentity}Service.deleteById(id);
+            ${lowerentity}Service.removeById(id);
         return Result.genSuccessResult();
 
     }
+
     @PostMapping("/update")
     public Object update(@RequestBody ${entity} ${lowerentity}) {
-        ${lowerentity}Service.updateById(${lowerentity});
+            ${lowerentity}Service.updateById(${lowerentity});
         return Result.genSuccessResult();
     }
 
     @GetMapping("/list")
     public Object list() {
-        List<${entity}> ${lowerentity}List = ${lowerentity}Service.selectList(null);
+        List<${entity}> ${lowerentity}List = ${lowerentity}Service.list(null);
         return Result.genSuccessResult(${lowerentity}List);
     }
 
+}
 }
 
